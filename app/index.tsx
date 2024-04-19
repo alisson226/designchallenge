@@ -1,6 +1,6 @@
 import { StyleSheet, Image } from 'react-native';
-import FilledButton from '../../components/FilledButton';
-import OutlineButton from '../../components/OutlineButton';
+import FilledButton from '../components/FilledButton';
+import OutlineButton from '../components/OutlineButton';
 import { Text, View } from '@/components/Themed';
 import Colors from '@/constants/Colors';
 
@@ -13,10 +13,10 @@ export default function TabOneScreen() {
 
       <Image
         style={styles.image}
-        source={require('../../assets/images/app-logo.png')}
+        source={require('../assets/images/app-logo.png')}
         />
         </View>
-      <Text style={styles.title}>Welcome!</Text>
+      <Text style={styles.title}>Welcome! HOME PAGE</Text>
       <Text style={styles.subtitle}>To your bright feature</Text>
       <FilledButton label='Start Now'></FilledButton>
       <OutlineButton label='Sign up with Google'></OutlineButton>

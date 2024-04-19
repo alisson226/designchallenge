@@ -16,7 +16,7 @@ export default function TabOneScreen() {
         />
       </View>
       <Text style={styles.title}>Welcome!</Text>
-      <Text style={styles.subtitle}>To your bright feature</Text>
+      <Text style={styles.subtitle}>To your bright future</Text>
       <FilledButton label="Start Now"></FilledButton>
       <OutlineButton label="Sign up with Google"></OutlineButton>
     </View>

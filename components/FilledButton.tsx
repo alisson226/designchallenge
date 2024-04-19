@@ -26,13 +26,13 @@ const style = StyleSheet.create({
   },
   button: {
     backgroundColor: Colors.light.tint,
-    borderRadius: 5,
+    borderRadius: 8,
   },
   text: {
     color: Colors.light.background,
     textAlign: 'center',
     fontWeight: '700',
-    fontSize: 16,
+    fontSize: 22,
     marginVertical: 16
   },
 });

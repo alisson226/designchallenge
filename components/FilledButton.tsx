@@ -5,13 +5,14 @@ import { View } from "./Themed";
 
 interface ButtonInterface {
   label: string;
+  pressefect: any;
 }
 
 export default class Button extends Component<ButtonInterface> {
   render() {
     return (
       <View style = {style.container}>
-        <TouchableOpacity style={style.button}>
+        <TouchableOpacity onPress={ this.props.pressefect } style={style.button}>
           <Text style={style.text}>{this.props.label}</Text>
         </TouchableOpacity>
       </View>

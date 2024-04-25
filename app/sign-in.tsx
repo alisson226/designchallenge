@@ -3,8 +3,11 @@ import FilledButton from "../components/FilledButton";
 import OutlineButton from "../components/OutlineButton";
 import { Text, View } from "@/components/Themed";
 import Colors from "@/constants/Colors";
+import { router } from "expo-router";
+import { useSession } from "../provider/context/authContext";
 
-export default function TabOneScreen() {
+export default function SignIn() {
+  const { signIn } = useSession();
   return (
     <View style={styles.container}>
       <View style={styles.imgcontainer}>
@@ -17,7 +20,12 @@ export default function TabOneScreen() {
       </View>
       <Text style={styles.title}>Welcome!</Text>
       <Text style={styles.subtitle}>To your bright future</Text>
-      <FilledButton label="Start Now"></FilledButton>
+      <FilledButton pressefect = {() => {
+          signIn();
+          // Navigate after signing in. You may want to tweak this to ensure sign-in is
+          // successful before navigating.
+          router.replace('/');
+        }}label="Start Now"></FilledButton>
       <OutlineButton label="Sign up with Google"></OutlineButton>
     </View>
   );

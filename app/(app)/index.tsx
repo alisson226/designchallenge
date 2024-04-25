@@ -1,12 +1,12 @@
 import { StyleSheet, Image } from 'react-native';
-import FilledButton from '../../components/FilledButton';
-import OutlineButton from '../../components/OutlineButton';
 import { Text, View } from '@/components/Themed';
 import Colors from '@/constants/Colors';
+import { useSession } from "../../provider/context/authContext";
 
 
 
-export default function TabOneScreen() {
+export default function Index() {
+  const { signOut } = useSession();
   return (
     <View style={styles.container}>
       <View style = {styles.imgcontainer}>
@@ -16,13 +16,19 @@ export default function TabOneScreen() {
         source={require('../../assets/images/app-logo.png')}
         />
         </View>
-      <Text style={styles.title}>Welcome!</Text>
-      <Text style={styles.subtitle}>To your bright feature</Text>
-      <FilledButton label='Start Now'></FilledButton>
-      <OutlineButton label='Sign up with Google'></OutlineButton>
+      <Text style={styles.title}>Page One!</Text>
+      <Text
+        onPress={() => {
+          // The `app/(app)/_layout.tsx` will redirect to the sign-in screen.
+          signOut();
+        }}>
+        Sign Out
+      </Text>
     </View>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
